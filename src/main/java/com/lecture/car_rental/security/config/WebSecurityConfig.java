@@ -55,7 +55,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .exceptionHandling().authenticationEntryPoint(authEntryPointJwt).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests().antMatchers("/car-rental/api/user/**",
-                "/car-rental/api/files/**", "/car-rental/api/car/**").permitAll()
+                "/car-rental/api/files/**", "/car-rental/api/car/**", "/car-rental/api/reservations/**").permitAll()
                 .anyRequest().authenticated();
 
         http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint(authEntryPointJwt).and()
